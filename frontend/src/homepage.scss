@@ -1,0 +1,162 @@
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  max-height: var(--max-todo-list-height); /* Set a maximum height for the todo list */
+
+  background-color: #0E1117;
+
+  /* scrollbar-color: #141414 #222222; */
+}
+
+.todo-list {
+  width: 60%;
+  padding: 0 10px;
+  flex-basis: 85%;
+  overflow: scroll;
+  scrollbar-width: none;
+  display: flex; /* Use flexbox for horizontal centering */
+  flex-direction: column-reverse; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  border: solid .5px #d3d3d3;
+  background-color: #161B22;
+
+  border-radius: 15px;
+}
+
+.todo-item {
+  position: relative; /* Positioning context for the delete button */
+  background-color: white;
+  width: 90%;
+  height: 40px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px !important;
+  margin: 15px;
+  text-align: center;
+  color: #636363;
+  font-size: large;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+
+  span {
+    flex: 1; /* Expand to fill remaining space */
+  }
+
+  input[type="checkbox"] {
+    flex-grow: 0;
+    margin-left: 0px;
+    transform: scale(1);
+    appearance: none;
+
+    &::before {
+      content: ""; /* Remove default checkbox content */
+      display: inline-block;
+      width: 37px; /* Adjust size of the checkbox */
+      height: 37px; /* Adjust size of the checkbox */
+      //border: none; /* Add a custom border color */
+      //background-color: rgba(0, 0, 0, 0.3);
+      //background-color: rgba(22, 27, 34, 0.9);
+      border: solid 1.5px rgba(0, 0, 0, 0.12);
+      border-radius: 10px;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    &:checked {
+      &::before {
+        content: "\2713";
+        color: rgba(0, 0, 0, 0.70);
+        font-size: 2.4em;
+        font-weight: bold;
+        text-align: center;
+        vertical-align: middle;
+        //background-color: #000000;
+        //clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &:hover .delete-button {
+    opacity: 1; /* Show delete button on hover */
+  }
+}
+
+.delete-button {
+  position: absolute; /* Position the delete button */
+  top: 50%; /* Center vertically */
+  right: 10px; /* Align to the right */
+  transform: translateY(-50%);
+  background-color: white;
+  border: solid 1.5px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  width: 40px; /* Set width */
+  height: 40px; /* Set height */
+}
+
+.input-container {
+  //position: fixed;
+  //bottom: 0;
+  width: 62%;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  flex-basis: 5%;
+
+
+  input {
+    flex: 1;
+    padding: 10px;
+    border: 0 solid #fff;
+    outline: none;
+    border-radius: 0;
+    margin-right: 10px;
+    width: 80%;
+    color: #636363;
+    font-family: Tahoma, sans-serif;
+    font-size: medium;
+  }
+
+  button {
+    width: 40px;
+    height: 40px;
+    background-color: #d3d3d3;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: #CBC7CF;
+    }
+  }
+}
+
+.send {
+  height: 15px;
+  width: 15px;
+}
+
+.delete {
+  height: 28px;
+  width: 28px;
+}

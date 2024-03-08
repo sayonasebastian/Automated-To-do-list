@@ -1,0 +1,51 @@
+body {
+  background-color: #222222;
+}
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #121212;
+}
+
+.login-container {
+  padding: 10%;
+  box-shadow: 0px 0px 10px #000000;
+  border-radius: 6%;
+  background-color: #fff;
+  width: 25%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-family: Tahoma, sans-serif;
+  color: #222222;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #d3d3d3
+
+  ;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 25%;
+}
+
+button:hover {
+  background-color: #c6c6c6;
+}
+p {
+  text-align: center;
+  font-size: 15px;
+  font-family: Tahoma, sans-serif;
+  color: #c6c6c6;
+}
